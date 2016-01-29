@@ -1,0 +1,31 @@
+{
+  "name": "tour",
+  "version": "0.0.1",
+  "description": "Tour Mustache App",
+  "main": "index.php",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-csslint": "^0.2.0",
+    "gulp-jslint": "^0.2.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:IQ-Solutions/tour.git"
+  },
+  "author": "Mike Snyder",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IQ-Solutions/tour/issues"
+  },
+  "homepage": "https://github.com/IQ-Solutions/tour"
+}
