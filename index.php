@@ -6,26 +6,27 @@
  * Time: 4:56 PM
  */
 
-class hscJSON{
-    public $base_url;
-    public $feed_url;
+require_once('include/base.php');
 
-    //Grab the feed
-    public function mJSON_Query($query) {
-        //View URL
-        $mJSON = file_get_contents($query);
+$m = new Mustache_Engine(
+  array(
+    'loader' => new Mustache_Loader_FilesystemLoader(dirname(__FILE__) . '/views'),
+  ));
 
-        if (!empty($mJSON)) {
-            $mJSON = json_decode($mJSON);
-            return $mJSON;
-        }
-        else {
-            return NULL;
-        }
-    }
+$tour = new mJSON;
 
-    //prep the vars for the mustache file
+// set base domain
+$tour->base_url = $config['base-url'];
+$tour->feed_url = $config['feed-url'];
+
+//Grab the JSON object
+$objtour = $tour->mJSON_Query($tour->feed_url);
 
 
-}
+//Push it to the Mustache Template
+echo $m->render('tour', $objtour);
 
+?><pre>
+<?php print_r($objtour); ?>
+    </pre>
+<?php
