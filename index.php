@@ -22,11 +22,9 @@ $tour->feed_url = $config['feed-url'];
 //Grab the JSON object
 $objtour = $tour->mJSON_Query($tour->feed_url);
 
+$data = array(
+  'slides' => $objtour,
+);
 
 //Push it to the Mustache Template
-echo $m->render('tour', $objtour);
-
-?><pre>
-<?php print_r($objtour); ?>
-    </pre>
-<?php
+echo $m->render('tour', $data);
