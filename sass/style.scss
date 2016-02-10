@@ -1,0 +1,161 @@
+@import 'reset';
+
+body{
+  background:#424242;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+
+/*Purple Circle Button
+
+  only used on desktop, swiping makes it unnecessary on mobile.
+*/
+.next-photo{
+  display:none;
+}
+
+@media screen and (min-width: 651px){
+  .next-photo{
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    display:block;
+
+    i {
+      background-color: #8a1d5d;
+      padding: .5em 10% 0 10%;
+      width: 30%;
+      max-width: 140px;
+      border-radius: 50%;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      height: 300px;
+      display: block;
+      margin: 0 auto;
+      color:#fff;
+      font-size:2em;
+      transition: background-color .5s ease-in-out;
+      -moz-transition: background-color .5s ease-in-out;
+      -webkit-transition: background-color .5s ease-in-out;
+    }
+
+    i:hover{
+      background-color:#CE2B8B;
+    }
+  }
+}
+
+@media screen and (min-width: 900px){
+  .next-photo {
+    height: 65px;
+  }
+}
+
+
+.section{
+  max-width:1024px;
+  position: relative;
+  overflow:hidden;
+  margin:0 auto;
+
+  img{
+
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+
+    @media screen and (min-width: 700px){
+      height:100%;
+      width:auto;
+      display:block;
+      margin:0 auto;
+    }
+  }
+
+}
+
+.caption{
+    @media screen and (min-width:650px){
+      bottom: 50px;
+      right: 2%;
+      max-width: 312px;
+      border-radius: 3px;
+      -webkit-box-shadow: 0px 11px 30px 0px rgba(0,0,0,0.59);
+      -moz-box-shadow: 0px 11px 30px 0px rgba(0,0,0,0.59);
+      box-shadow: 0px 11px 30px 0px rgba(0,0,0,0.59);
+    }
+    position: absolute;
+    bottom: 0;
+    width: 98%;
+    padding: 1em 2%;
+    background: #fff;
+    font:normal .9em/1.4 "Droid Sans", Arial, Helvetica;
+
+      h3{
+        color: #7c1956;
+        font: bold 1.3em/1.2 "Droid Sans", Arial, Helvetica;
+        margin-bottom:.5em;
+      }
+
+}
+
+.pageTop{
+  height:78px;
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:9999;
+  background:#fff;
+  margin-bottom:0;
+
+  .logo{
+    width:270px;
+    margin:0 auto 10px;
+    height:58px;
+
+    img{
+      margin: 5px auto;
+      display: inline-block;
+      float: left;
+    }
+
+    span{
+      display: inline-block;
+      vertical-align: middle;
+      padding-top: 24px;
+      margin-left: 10px;
+      font-family: "Droid Sans", Arial, Helvetica;
+    }
+  }
+
+  .navbar{
+    background-color:#73adde;
+    text-align:center;
+    clear:left;
+
+    li{
+      display:inline-block;
+      width: 10%;
+
+      a{
+        width:100%;
+        text-indent: -9999px;
+        display:block;
+        border-right:solid 2px #fff;
+      }
+      &:last-child {
+        a{
+          border-right:none;
+        }
+
+      }
+
+    }
+
+    .active{
+      background-color:#2571b9;
+    }
+  }
+}

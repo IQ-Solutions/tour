@@ -14,7 +14,7 @@ class mJSON{
   public function mJSON_Query($query) {
     //View URL
     $mJSON = file_get_contents($query);
-    //$mJSON = str_replace('{','"node" : { ', $mJSON);
+    //$mJSON = str_replace('{','"node" : {', $mJSON);
 
     if (!empty($mJSON)) {
       $mJSON = json_decode($mJSON , true);

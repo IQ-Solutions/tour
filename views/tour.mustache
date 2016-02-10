@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>Tour</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="libraries/jquery.fullpage.min.js"></script>
+    <script type="text/javascript" src="js-min/js.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css"  title="Primary Stylesheet">
+    <link href="css/jquery.fullpage.min.css" rel="stylesheet" type="text/css" title="Full Page Stylesheet">
+</head>
+<body>
+
+<section class="pageTop">
+    <div class="logo"><img src="images/HSC-logo.png" alt="HSC Logo"/> <span>The HSC Health Care System</span></div>
+    <ul class="navbar">{{#slides}}<li data-menuanchor="slide{{counter}}" class="menu-slide{{counter}}"><a href="#slide{{counter}}" class="slidenav">Slide {{counter}}</a></li>{{/slides}}</ul>
+</section>
+<div id="fullpage">
+    {{#slides}}
+        <div class="section" id="section{{counter}}">
+            <img data-src="{{field_image_slideshow}}" alt="{{{title}}}"/>
+            <div class="caption"><h3>{{{title}}}</h3>{{{body}}}</div>
+        </div>
+    {{/slides}}
+</div>
+<div class="next-photo"><i class="fa fa-chevron-down"></i></div>
+
+<script type="text/javascript">
+//init here so PHP can give us counters
+// Scroll slide detection
+$(document).ready(function() {
+
+    $('#fullpage').fullpage({
+        anchors:[{{#slides}}'slide{{counter}}',{{/slides}}],
+        scrollingSpeed: '700',
+        controlArrows: false,
+        fixedElements: 'pageTop',
+        animateAnchor: false,
+        navigation: false,
+        responsiveWidth: 600,
+        setFitToSection: true,
+        onLeave: function(index, nextIndex, direction){
+            var tourSection = '.menu-slide' + (index - 1);
+            var nextTourSection = '.menu-slide' + (nextIndex - 1);
+
+            $(tourSection).removeClass("active");
+            $(nextTourSection).addClass("active");
+        }
+    });
+});
+</script>
+
+</body></html>

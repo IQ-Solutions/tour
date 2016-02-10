@@ -1,6 +1,43 @@
-body {
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  background: #424242; }
 
 /*Purple Circle Button
 
@@ -9,7 +46,7 @@ body {
 .next-photo {
   display: none; }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 651px) {
   .next-photo {
     text-align: center;
     position: fixed;
@@ -19,7 +56,7 @@ body {
     display: block; }
     .next-photo i {
       background-color: #8a1d5d;
-      padding: 1em 10% 0 10%;
+      padding: .5em 10% 0 10%;
       width: 30%;
       max-width: 140px;
       border-radius: 50%;
@@ -29,7 +66,7 @@ body {
       display: block;
       margin: 0 auto;
       color: #fff;
-      font-size: 1.3em;
+      font-size: 2em;
       transition: background-color .5s ease-in-out;
       -moz-transition: background-color .5s ease-in-out;
       -webkit-transition: background-color .5s ease-in-out; }
@@ -39,31 +76,79 @@ body {
   .next-photo {
     height: 65px; } }
 .section {
-  position: relative; }
+  max-width: 1024px;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto; }
   .section img {
+    /* Set up proportionate scaling */
     width: 100%;
-    height: auto;
-    margin: 0 auto; }
+    height: auto; }
+    @media screen and (min-width: 700px) {
+      .section img {
+        height: 100%;
+        width: auto;
+        display: block;
+        margin: 0 auto; } }
 
-@media screen and (min-width: 601px) {
-  .caption {
-    position: absolute;
-    bottom: 25px;
-    right: 2%;
-    max-width: 312px; } }
-.caption i {
+.caption {
+  position: absolute;
+  bottom: 0;
   width: 98%;
-  padding: .5em 2%;
+  padding: 1em 2%;
   background: #fff;
-  border-radius: 3px;
-  -webkit-box-shadow: 0px 11px 30px 0px rgba(0, 0, 0, 0.59);
-  -moz-box-shadow: 0px 11px 30px 0px rgba(0, 0, 0, 0.59);
-  box-shadow: 0px 11px 30px 0px rgba(0, 0, 0, 0.59); }
+  font: normal .9em/1.4 "Droid Sans", Arial, Helvetica; }
+  @media screen and (min-width: 650px) {
+    .caption {
+      bottom: 50px;
+      right: 2%;
+      max-width: 312px;
+      border-radius: 3px;
+      -webkit-box-shadow: 0px 11px 30px 0px rgba(0, 0, 0, 0.59);
+      -moz-box-shadow: 0px 11px 30px 0px rgba(0, 0, 0, 0.59);
+      box-shadow: 0px 11px 30px 0px rgba(0, 0, 0, 0.59); } }
+  .caption h3 {
+    color: #7c1956;
+    font: bold 1.3em/1.2 "Droid Sans", Arial, Helvetica;
+    margin-bottom: .5em; }
 
 .pageTop {
-  height: 50px;
+  height: 78px;
   position: fixed;
   top: 0;
-  width: 100%; }
+  width: 100%;
+  z-index: 9999;
+  background: #fff;
+  margin-bottom: 0; }
+  .pageTop .logo {
+    width: 270px;
+    margin: 0 auto 10px auto;
+    height: 58px; }
+    .pageTop .logo img {
+      margin: 5px auto;
+      display: inline-block;
+      float: left; }
+    .pageTop .logo span {
+      display: inline-block;
+      vertical-align: middle;
+      padding-top: 24px;
+      margin-left: 10px;
+      font-family: "Droid Sans", Arial, Helvetica; }
+  .pageTop .navbar {
+    background-color: #73adde;
+    text-align: center;
+    clear: left; }
+    .pageTop .navbar li {
+      display: inline-block;
+      width: 10%; }
+      .pageTop .navbar li a {
+        width: 100%;
+        text-indent: -9999px;
+        display: block;
+        border-right: solid 2px #fff; }
+      .pageTop .navbar li:last-child a {
+        border-right: none; }
+    .pageTop .navbar .active {
+      background-color: #2571b9; }
 
 /*# sourceMappingURL=style.css.map */

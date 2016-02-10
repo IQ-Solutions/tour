@@ -2,8 +2,13 @@
  * Created by msnyder on 1/28/2016.
  */
 
-//JSON Source URL: http://hscdemo.iqscloud.net/api/virtual-tour
+$(document).ready(function() {
 
-$(document.ready(function(){
-    console.log('test');
-}));
+    $('.navbar li').first().addClass("active");
+
+    //Manual Trigger
+    $('.next-photo .fa-chevron-down').click(function(){
+        $.fn.fullpage.moveSectionDown();
+    });
+
+});

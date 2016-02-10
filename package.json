@@ -14,7 +14,10 @@
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^1.5.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "font-awesome": "^4.5.0",
+    "gulp-scss-lint": "^0.3.9"
+  },
   "scripts": {
     "test": "gulp"
   },
